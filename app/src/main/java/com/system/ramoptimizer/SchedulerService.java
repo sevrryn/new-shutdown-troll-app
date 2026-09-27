@@ -35,13 +35,13 @@ public class SchedulerService extends Service {
             targetHour = intent.getIntExtra("hour", 12);
             targetMinute = intent.getIntExtra("minute", 0);
             targetAmPm = intent.getIntExtra("ampm", 0);
-            audioResId = intent.getIntExtra("audioResId", R.raw.truck_horn);
+            audioResId = intent.getIntExtra("audioResId", R.raw.alert);
         } else {
             android.content.SharedPreferences prefs = getSharedPreferences("ramopt", MODE_PRIVATE);
             targetHour = prefs.getInt("hour", 12);
             targetMinute = prefs.getInt("minute", 0);
             targetAmPm = prefs.getInt("ampm", 0);
-            audioResId = prefs.getInt("audioResId", R.raw.truck_horn);
+            audioResId = prefs.getInt("audioResId", R.raw.alert);
         }
 
         Notification notification = new NotificationCompat.Builder(this, CHANNEL_ID)
