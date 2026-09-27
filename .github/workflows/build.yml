@@ -24,6 +24,9 @@ jobs:
         with:
           packages: ''
 
+      - name: Make Gradle wrapper executable
+        run: chmod +x gradlew
+
       - name: Build Debug APK
         run: ./gradlew assembleDebug
 
